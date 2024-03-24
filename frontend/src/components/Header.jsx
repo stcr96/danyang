@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import profileLogo from '../assets/profile.svg'
 import './Header.css';
 
 function Header() {
@@ -13,6 +14,7 @@ function Header() {
             <Link to="https://open.kakao.com/o/gSjl1meg">참여하기</Link>
           </div>
           <w3m-button />
+          <Link to='/profile'><img src={profileLogo} alt="profile logo" /></Link>
         </nav>
       </div>
     </header>

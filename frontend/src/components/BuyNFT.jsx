@@ -1,7 +1,7 @@
 import { useWeb3ModalProvider, useWeb3ModalAccount } from '@web3modal/ethers/react'
 import { BrowserProvider, Contract, parseEther } from 'ethers'
 
-const DanyangAddress = "0x9Cd3FB6392260B924F482859Eb784435a1e47993";
+const DanyangAddress = "0x7BA2a720219A81D570d15DE2611c2412FebEF5ee";
 const DanyangABI = [
   {
     "inputs": [
@@ -273,7 +273,13 @@ const DanyangABI = [
   {
     "inputs": [],
     "name": "buyNFT",
-    "outputs": [],
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "",
+        "type": "string"
+      }
+    ],
     "stateMutability": "payable",
     "type": "function"
   },
@@ -557,6 +563,19 @@ const DanyangABI = [
   {
     "inputs": [
       {
+        "internalType": "string",
+        "name": "joinCode_",
+        "type": "string"
+      }
+    ],
+    "name": "updateJoinCode",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
         "internalType": "bool",
         "name": "saleStatus_",
         "type": "bool"
@@ -587,10 +606,9 @@ function BuyNFT() {
     const signer = await ethersProvider.getSigner()
     // The Contract object
     const DanyangContract = new Contract(DanyangAddress, DanyangABI, signer)
-    const buyDanyang = await DanyangContract.buyNFT({value: parseEther('0.01')})
-    await buyDanyang.wait();
+    const joinCode = await DanyangContract.buyNFT({value: parseEther('0.01')})
 
-    console.log("Buy NFT Successful");
+    console.log("Join Kakaotalk with ", joinCode);
   }
 
   return (

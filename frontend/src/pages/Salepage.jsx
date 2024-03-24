@@ -8,7 +8,8 @@ function Salepage() {
   return (
     <>
       <Header />
-        <div id="sale" className='sale-container'>
+      <main>
+        <div id="sale" className='main'>
           <h2 className='text-center'>단양팔경 NFT</h2>
           <hr className='my-5' />
           <div className='nft-container'>
@@ -95,11 +96,12 @@ function Salepage() {
                 </div>
               </div>
             </div>
-            <div className="nft_img">
+            <div className="nft-img">
               <img src="https://ipfs.io/ipfs/QmSJ3rrxnExFMw1G4fh4iXihtT5GFPPpLfcTsotKvPkUNz?filename=%EC%82%AC%EC%9D%B8%EC%95%94%EB%8F%84-%EA%B9%80%ED%99%8D%EB%8F%84.jpg" alt="사인암nft" />
             </div>
           </div>
         </div>
+      </main>
       <Footer />
     </>
   )

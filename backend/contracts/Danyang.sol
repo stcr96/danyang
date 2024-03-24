@@ -8,6 +8,7 @@ contract Danyang is ERC721, Ownable {
     uint256 private _tokenId;
     uint public constant price = 0.01 ether;
     bool private _saleStatus = true;
+    string private _joinCode = "abcd1234";
 
     constructor(address initialOwner) ERC721("Danyang", "DYM") Ownable(initialOwner) { }
 
@@ -21,6 +22,15 @@ contract Danyang is ERC721, Ownable {
 
     function updateSaleStatus(bool saleStatus_) public onlyOwner {
         _saleStatus = saleStatus_;
+    }
+
+    function getJoinCode(uint256 tokenId) public view returns (string memory) {
+        require(msg.sender==ownerOf(tokenId), "Danyang: Not your token");
+        return _joinCode;
+    }
+    
+    function updateJoinCode(string memory joinCode_) public onlyOwner {
+        _joinCode = joinCode_;
     }
 
     function buyNFT() public payable {
