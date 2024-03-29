@@ -1,9 +1,12 @@
 import { createWeb3Modal, defaultConfig } from '@web3modal/ethers/react'
-import Header from './components/Header'
+import Header from './components/Header';
 import Footer from './components/Footer'
 import { Link } from 'react-router-dom';
-import exampleLogo from './assets/example.svg';
-import firstPicture from './assets/app-1.png';
+import danyangLandscape from './assets/danyang-landscape.jpg'
+import example from './assets/app-1.png'
+import diplomaLogo from './assets/diploma.svg'
+import communityLogo from './assets/community.svg'
+import voteLogo from './assets/vote.svg'
 import './App.css'
 
 // 1. Get projectId
@@ -12,7 +15,7 @@ const projectId = '9ee04e5a11ffadb507e3e5d0b6ae19af'
 // 2. Set chains
 const mainnet = {
   chainId: 80001,
-  name: 'MATIC_MUMBAI',
+  name: 'Mumbai',
   currency: 'MATIC',
   explorerUrl: 'https://mumbai.polygonscan.com/',
   rpcUrl: 'https://polygon-mumbai.g.alchemy.com/v2/Q4TLtST-SqQc-Il8qolLi5XQ90figtVd'
@@ -45,66 +48,84 @@ function App() {
   return (
     <>
       <Header />
-      <main>
+      <main id='Home'>
         <section className="a">
-          <div className='app-container'>
-            <div className='timeline'>
-              <img src={exampleLogo} alt="example logo" />
-              <hr />
-            </div>
-            <div className='content-wrapper'>
-              <div className="content-info">
-                <h1 className='super'>NFT 구매하고,<br /> 단양다민 되자!</h1>
-                <h1 className='small'>
-                  합리적인 가격에 nft를 구매하고 디지털 단양주민이 <br /> 되면 다양한 혜택이 있습니다
-                </h1>
-                <Link to='/products'>단양NFT 둘러보기</Link>
-              </div>
-              <div className="img-info">
-                <img src={firstPicture} alt="디지털주민증" />
-              </div>
-            </div>
+          <div className="a-title">
+            <strong>Danyang</strong>
           </div>
-          <div className='app-container'>
-            <div className='timeline'>
-              <img src={exampleLogo} alt="example logo" />
-              <hr />
-            </div>
-            <div className='content-wrapper'>
-              <div className="content-info">
-                <h1 className='super'>주민증 발급하면,<br />혜택이 팡팡</h1>
-                <h1 className='small'>
-                  합리적인 가격에 nft를 구매하고 디지털 단양주민이 <br /> 되면 다양한 혜택이 있습니다
-                </h1>
-                <Link to='/products'>어떤 혜택이 있나요?</Link>
-              </div>
-              <div className="img-info">
-                <img src={firstPicture} alt="디지털주민증" />
-              </div>
-            </div>
+          <div className="a-content">
+            <button className="primary"><Link to='/about'>단양다오 알아보기</Link></button>
+            <button className="secondary"><Link to='/marketplace'>NFT 구매하기</Link></button>
           </div>
-          <div className='app-container'>
-            <div className='timeline'>
-              <img src={exampleLogo} alt="example logo" />
-            </div>
-            <div className='content-wrapper'>
-              <div className="content-info">
-                <h1 className='super'>DAO에 참여해<br />단양을 내맘대로</h1>
-                <h1 className='small'>
-                  합리적인 가격에 nft를 구매하고 디지털 단양주민이 <br /> 되면 다양한 혜택이 있습니다
-                </h1>
-                <Link to='/products'>DAO가 무엇인가요?</Link>
-              </div>
-              <div className="img-info">
-                <img src={firstPicture} alt="디지털주민증" />
-              </div>
-            </div>
-          </div>
+          <img src={danyangLandscape} alt="danyang-landscape" className='b-image' />
         </section>
 
-        <section className='b'>
+        <div className="container">
+          <section className='b'>
+            <div className="b-title">
+              <strong>Digital Renaissance: <br />Danyang</strong>
+            </div>
+            <div className="b-content">
+              <p>Dive into a unique universe, a place where digital pixels coexist with the tranquillity of Danyang, an endangered area. Here, you don’t just purchase an NFT, you purchase a lifeline for a region on the brink.</p>
+              <p>Buy an NFT. Become a digital resident. There’s no easier way to join in the revolution to renew our world. Be a part of creating a haven for art and culture, in the midst of mountains and rivers.</p>
+            </div>
+          </section>
 
-        </section>
+          <section className="c">
+            <div className="card">
+              <img src={diplomaLogo} alt="diploma-logo" />
+              <h2 className="card-title">Unlock Exclusive Benefits with NFT Ownership</h2>
+              <p>As an NFT holder and DAO member, you gain access to a range of exciting benefits. Enjoy governance rights, participate in community events, and contribute to conservation efforts in Danyang.</p>
+              <div className="flex-card">
+                <button className="secondary">Learn More</button>
+                <Link to='/'><small>Sign Up</small></Link>
+              </div>
+            </div>
+            <div className="card">
+              <img src={communityLogo} alt="community-logo" />
+              <h2 className="card-title">Join a Thriving Digital Community</h2>
+              <p>As an NFT holder and DAO member, you gain access to a range of exciting benefits. Enjoy governance rights, participate in community events, and contribute to conservation efforts in Danyang.</p>
+              <div className="flex-card">
+                <button className="secondary">Learn More</button>
+                <Link to='/'><small>Sign Up</small></Link>
+              </div>
+            </div>
+            <div className="card">
+              <img src={voteLogo} alt="vote-logo" />
+              <h2 className="card-title">Join a Thriving Digital Community</h2>
+              <p>As an NFT holder and DAO member, you gain access to a range of exciting benefits. Enjoy governance rights, participate in community events, and contribute to conservation efforts in Danyang.</p>
+              <div className="flex-card">
+                <button className="secondary">
+                  <Link to='https://www.tally.xyz/gov/danyang'>Learn More</Link>
+                </button>
+                <Link to='/'><small>Sign Up</small></Link>
+              </div>
+            </div>
+          </section>
+
+          <section className="d">
+            <div className='one'>
+              <strong className='strong-number'>1000+</strong>
+              <p>Digital Regidents</p>
+            </div>
+            <div className='two'><img src={example} alt="example" /></div>
+            <div className='three'>three</div>
+            <div className='four'>
+              <strong className='strong-number'>500+</strong>
+            </div>
+          </section>
+
+          <section className="e">
+            <div className="e-title">
+              <strong>Ready, Set</strong>
+            </div>
+            <div className="e-content">
+              <p>Ready to leap into the future while preserving the past? You’re just a click away. Time to set Danyang’s destiny.</p>
+            </div>
+            <button className="primary">Purchase NFT</button>
+          </section>
+          
+        </div>
       </main>
       <Footer />
     </>

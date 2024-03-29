@@ -1,27 +1,55 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 div {
   display: block;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-}
-
 body {
-  height:100vh;
-}
-
-button {
-  cursor: pointer;
+  min-width: 320px;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 main {
+  padding-top: 72px;
   width: 1080px;
-  margin-top: 10rem;
   margin-left: auto;
   margin-right: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+img {
+  filter: grayscale(1);
+}
+
+button {
+  background: none;
+  color: inherit;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+}
+
+button.primary {
+  background: black;
+  color: white;
+  border-radius: 0.25rem;
+}
+
+button.secondary {
+  border: 1px solid gray;
+  border-radius: 0.25rem;
 }
