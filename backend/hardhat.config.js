@@ -1,4 +1,7 @@
+require('dotenv').config();
 require("@nomicfoundation/hardhat-toolbox");
+
+const { API_URL, PRIVATE_KEY } = process.env;
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -14,8 +17,8 @@ module.exports = {
   defaultNetwork: 'Mumbai',
   networks: {
     Mumbai: {
-      url: "https://polygon-mumbai.g.alchemy.com/v2/Q4TLtST-SqQc-Il8qolLi5XQ90figtVd",
-      accounts: ["75c62d126b9065b177e18f8feffe0efeed65ea34697765451dfaba936269f4e2"]
+      url: `${API_URL}`,
+      accounts: [`0x${PRIVATE_KEY}`]
     },
     // Fuji: {
     //   url: "https://avalanche-fuji.infura.io/v3/f8a865fe5daa45d29b538c8cc0d4ebe4",
