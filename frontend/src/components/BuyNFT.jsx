@@ -25,7 +25,7 @@ function BuyNFT() {
 
   return (
     <>
-      <button onClick={buyNFT}>구매하기</button>
+      <button onClick={buyNFT} className='primary'>구매하기</button>
     </>
   )
 }

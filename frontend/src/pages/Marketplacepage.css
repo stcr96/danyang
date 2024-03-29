@@ -1,3 +1,13 @@
+.marketplace-title-container {
+  width: 100%;
+  text-align: center;
+  padding: 3rem 0;
+}
+
+.marketplace-title {
+  font-size: 4rem;
+}
+
 .nft-container {
   display: flex;
   justify-content: space-between;
@@ -8,6 +18,10 @@
   flex-direction: column;
   align-content: space-between;
   max-width: 40%;
+}
+
+.nft-title {
+  margin-bottom: 2rem;
 }
 
 .nft-content {
@@ -24,6 +38,16 @@
   max-width: 50%;
 }
 
+.flex-sale {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sale-price {
+  font-weight: bold;
+  font-size: x-large;
+}
+
 .data {
   font-weight: bold;
 }
@@ -33,7 +57,6 @@
   font-size: small;
 }
 
-.sale-price {
-  font-weight: bold;
-  font-size: x-large;
+hr {
+  margin: 4rem 0;
 }
