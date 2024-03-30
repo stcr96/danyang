@@ -22,6 +22,10 @@ main {
   margin-right: auto;
 }
 
+section {
+  margin-bottom: 10rem;
+}
+
 a {
   text-decoration: none;
   color: inherit;

@@ -3,7 +3,9 @@ import Header from './components/Header';
 import Footer from './components/Footer'
 import { Link } from 'react-router-dom';
 import danyangLandscape from './assets/danyang-landscape.jpg'
-import example from './assets/app-1.png'
+import learnmoreLogo from './assets/learnmore.svg'
+import credential from './assets/credential.png'
+import three from './assets/three.jpg'
 import diplomaLogo from './assets/diploma.svg'
 import communityLogo from './assets/community.svg'
 import voteLogo from './assets/vote.svg'
@@ -66,8 +68,8 @@ function App() {
               <strong>Digital Renaissance: <br />Danyang</strong>
             </div>
             <div className="b-content">
-              <p>Dive into a unique universe, a place where digital pixels coexist with the tranquillity of Danyang, an endangered area. Here, you don’t just purchase an NFT, you purchase a lifeline for a region on the brink.</p>
-              <p>Buy an NFT. Become a digital resident. There’s no easier way to join in the revolution to renew our world. Be a part of creating a haven for art and culture, in the midst of mountains and rivers.</p>
+              <p>소멸위기 지역 단양의 고요함과 디지털 픽셀이 공존하는 독특한 우주로 빠져보세요. 여기서는 NFT를 구매하는 것이 아니라 위기에 처한 지역의 생명선을 구매합니다.</p>
+              <p>NFT를 구매하세요. 디지털 거주자가 되세요. 세상을 새롭게 하기 위한 혁명에 동참하는 것보다 더 쉬운 방법은 없습니다. 산과 강이 어우러진 예술과 문화의 안식처를 만드는 일에 동참해 보세요.</p>
             </div>
           </section>
 
@@ -75,30 +77,45 @@ function App() {
             <div className="card">
               <img src={diplomaLogo} alt="diploma-logo" />
               <h2 className="card-title">Unlock Exclusive Benefits with NFT Ownership</h2>
-              <p>As an NFT holder and DAO member, you gain access to a range of exciting benefits. Enjoy governance rights, participate in community events, and contribute to conservation efforts in Danyang.</p>
-              <div className="flex-card">
-                <button className="secondary">Learn More</button>
-                <Link to='/'><small>Sign Up</small></Link>
+              <p>NFT 보유자이자 DAO 회원으로서 귀하는 다양하고 흥미로운 혜택을 누릴 수 있습니다. 거버넌스 권리를 누리고, 커뮤니티 행사에 참여하고, 단양의 보전 노력에 기여하세요.</p>
+              <div className="card-flex">
+                <button className="primary"><Link to='/marketplace'>구매하기</Link></button>
+                <Link to='/about'>
+                  <div className="learn-more">
+                    <small>자세히 알아보기</small>
+                    <img src={learnmoreLogo} alt="learn-more" />
+                  </div>
+                </Link>
               </div>
             </div>
             <div className="card">
               <img src={communityLogo} alt="community-logo" />
               <h2 className="card-title">Join a Thriving Digital Community</h2>
-              <p>As an NFT holder and DAO member, you gain access to a range of exciting benefits. Enjoy governance rights, participate in community events, and contribute to conservation efforts in Danyang.</p>
-              <div className="flex-card">
-                <button className="secondary">Learn More</button>
-                <Link to='/'><small>Sign Up</small></Link>
+              <p>NFT 보유자이자 DAO 회원으로서 귀하는 다양하고 흥미로운 혜택을 누릴 수 있습니다. 거버넌스 권리를 누리고, 커뮤니티 행사에 참여하고, 단양의 보전 노력에 기여하세요.</p>
+              <div className="card-flex">
+                <button className="secondary"><Link to='https://open.kakao.com/o/gSjl1meg'>토론하기</Link></button>
+                <Link to='/about'>
+                  <div className="learn-more">
+                    <small>자세히 알아보기</small>
+                    <img src={learnmoreLogo} alt="learn-more" />
+                  </div>
+                </Link>
               </div>
             </div>
             <div className="card">
               <img src={voteLogo} alt="vote-logo" />
               <h2 className="card-title">Join a Thriving Digital Community</h2>
-              <p>As an NFT holder and DAO member, you gain access to a range of exciting benefits. Enjoy governance rights, participate in community events, and contribute to conservation efforts in Danyang.</p>
-              <div className="flex-card">
-                <button className="secondary">
-                  <Link to='https://www.tally.xyz/gov/danyang'>Learn More</Link>
+              <p>NFT 보유자이자 DAO 회원으로서 귀하는 다양하고 흥미로운 혜택을 누릴 수 있습니다. 거버넌스 권리를 누리고, 커뮤니티 행사에 참여하고, 단양의 보전 노력에 기여하세요.</p>
+              <div className="card-flex">
+                <button className="primary">
+                  <Link to='https://www.tally.xyz/gov/danyang-governor'>투표하기</Link>
                 </button>
-                <Link to='/'><small>Sign Up</small></Link>
+                <Link to='/about'>
+                  <div className="learn-more">
+                    <small>자세히 알아보기</small>
+                    <img src={learnmoreLogo} alt="learn-more" />
+                  </div>
+                </Link>
               </div>
             </div>
           </section>
@@ -106,12 +123,17 @@ function App() {
           <section className="d">
             <div className='one'>
               <strong className='strong-number'>1000+</strong>
-              <p>Digital Regidents</p>
+              <p>지금까지 1000명이 넘게 단양 디지털 주민이 되었습니다</p>
             </div>
-            <div className='two'><img src={example} alt="example" /></div>
-            <div className='three'>three</div>
+            <div className='two'><img src={credential} alt="credential" className='two-img' /></div>
+            <div className='three'>
+              <div className="three-wrapper">
+                <img src={three} alt="" className='three-img' />
+              </div>
+            </div>
             <div className='four'>
               <strong className='strong-number'>500+</strong>
+              <p>매년 500명이 넘는 디지털 주민이 혜택을 받아가고 있습니다</p>
             </div>
           </section>
 
@@ -122,7 +144,7 @@ function App() {
             <div className="e-content">
               <p>Ready to leap into the future while preserving the past? You’re just a click away. Time to set Danyang’s destiny.</p>
             </div>
-            <button className="primary">Purchase NFT</button>
+            <button className="primary"><Link to='/about'>Getting Started</Link></button>
           </section>
           
         </div>

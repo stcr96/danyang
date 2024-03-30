@@ -13,7 +13,9 @@ function Marketplacepage() {
           <h1 className='marketplace-title'>단양팔경 NFTs</h1>
           <p>단양의 아름다움을 상징하는 단양팔경 NFT를 구매하여 단양의 디지털 주민이 되고 지역 사회를 지원하세요.</p>
         </div>
-        <hr />
+        <div className="opensea-container">
+        <a href="https://opensea.io/" title="Buy on OpenSea" target="_blank"><img src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20BW.png" alt="Available on OpenSea" className='opensea-available' /></a>
+        </div>
         <div className='nft-container'>
           <div className="nft-wrapper">
             <h1 className='nft-title'>제1경 도담삼봉</h1>

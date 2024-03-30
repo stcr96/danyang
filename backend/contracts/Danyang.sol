@@ -14,42 +14,52 @@ contract Danyang is ERC721, EIP712, ERC721Votes, ReentrancyGuard, Ownable {
     string private baseURI;
     string private _joinCode;
 
-    constructor(address initialOwner)
+    constructor(address initialOwner, string memory initialBaseURI, string memory initialJoinCode)
         ERC721("Danyang", "ESDY")
         EIP712("Danyang", "1")
         Ownable(initialOwner)
-    { }
-
-    /* @dev set 함수는 배포 후 초기 세팅이 필요합니다.
-     * 추후 update시 에도 사용할 수 있습니다.
-     */
-    function setBaseURI(string calldata baseURI_) external onlyOwner {
-        baseURI = baseURI_;
-    }
-    
-    function setJoinCode(string calldata joinCode_) external onlyOwner {
-        _joinCode = joinCode_;
+    { 
+        baseURI = initialBaseURI;
+        _joinCode = initialJoinCode;
     }
 
     function _baseURI() internal view virtual override returns (string memory) {
         return baseURI;
     }
 
-    function updateSaleStatus(bool _saleStatus) external onlyOwner {
-        saleStatus = _saleStatus;
-    }
-
-    function getJoinCode(uint256 tokenId) public view returns (string memory) {
-        require(msg.sender==ownerOf(tokenId), "Danyang: Not your token");
-        return _joinCode;
-    }
+    // 다음 함수들은 사용자와 상호작용하는 함수들입니다.
 
     function buy() public payable {
         require(saleStatus, "Danyang: Not on sale now");
+        require(balanceOf(_msgSender())==0, "Danyang: Already have Danyang NFT");
         require(msg.value >= price, "Danyang: Not enough balance to buy");
         uint256 tokenId =_nextTokenId++;
 
         _safeMint(_msgSender(), tokenId);
+    }
+
+    function isDamin() public view returns (bool) {
+        if (balanceOf(msg.sender)==1) return true;
+        else return false;
+    }
+
+    function getJoinCode() public view returns (string memory) {
+        require(balanceOf(msg.sender)==1, "Danyang: Not a Damin");
+        return _joinCode;
+    }
+    
+    // 다음 함수들은 owner만 사용할 수 있습니다.
+
+    function updateBaseURI(string calldata baseURI_) external onlyOwner {
+        baseURI = baseURI_;
+    }
+    
+    function updateJoinCode(string calldata joinCode_) external onlyOwner {
+        _joinCode = joinCode_;
+    }
+    
+    function updateSaleStatus(bool _saleStatus) external onlyOwner {
+        saleStatus = _saleStatus;
     }
 
     function withdraw() public payable onlyOwner nonReentrant {

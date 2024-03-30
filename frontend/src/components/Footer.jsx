@@ -9,10 +9,9 @@ function Footer() {
   return (
     <footer>
       <nav className="footer-nav">
-        <h2 className="footer-brand">
+        <h1 className="footer-brand">
           <img src={danyangLogo} alt="Danyang" />
-          <span>Danyang</span>
-        </h2>
+        </h1>
         
         <div className="footer-menu-container">
           <ul className='footer-menu'>

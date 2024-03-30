@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import './Aboutpage.css'
+import GetJoinCode from '../components/GetJoinCode'
+import './Profilepage.css'
 
-function ProfilePage() {
+function Profilepage() {
   const [profileBackground, setProfileBackground] = useState(null);
   const [profileImage, setProfileImage] = useState(null);
 
@@ -28,42 +29,40 @@ function ProfilePage() {
   return (
     <>
       <Header />
-      <div className="profile-main">
+      <main id='Profile'>
         {/* 프로필 배경사진 */}
-        <div className="profile-container">
+        <section className="profile">
           <label htmlFor="backgroundUpload" className="profile-background-container">
-            <image src={profileBackground} className='profile-background' />
+            <img src={profileBackground} className='profile-background' />
             <input type="file" id="backgroundUpload" accept='image/*' onChange={handleBackgroundUpload} style={{display: 'none'}} />
           </label>
           {/* 프로필 사진 */}
-          <label htmlFor="imageUpload" className="profile-picture-container">
-            <image src={profileImage} className='profile-picture' />
-            <input type="file" id="imageUpload" accept='image/*' onChange={handleImageUpload} style={{display: 'none'}} />
-          </label>
-        </div>
-        <main>
-          <div className='profile-info-container'>
-            <div className='mb-5'>
-              <div className="profile-info">
-                <h2 className="mb-4">프로필 정보</h2>
-                <div>
-                  <strong>Account:  </strong>
-                  <span>캘시퍼</span>
-                </div>
-                <div>
-                  <strong>Network:  </strong>
-                  <span>Ethereum</span>
-                </div>
-                <button>프로필 수정</button>
-                {/* 다른 프로필 정보도 필요에 따라 추가 */}
-              </div>
-            </div>
+          <div className="profile-picture-relative">
+            <label htmlFor="imageUpload" className="profile-picture-container">
+              <img src={profileImage} className='profile-picture' />
+              <input type="file" id="imageUpload" accept='image/*' onChange={handleImageUpload} style={{display: 'none'}} />
+            </label>
           </div>
-        </main>
-      </div>
+        </section>
+
+        <section className="profile-resident">
+          <div className="profile-resident-card">
+            <h1>디지털 주민등록증</h1>
+            <div></div>
+          </div>
+          <div className="profile-resident-info">
+            <form action='submit'>
+              <p>이름</p>
+            </form>
+            <GetJoinCode />
+          </div>
+          {/* 다른 프로필 정보도 필요에 따라 추가 */}
+        </section>
+        
+      </main>
       <Footer />
     </>
   )
 }
 
-export default ProfilePage;
+export default Profilepage;
