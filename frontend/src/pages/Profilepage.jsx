@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
+import ProfileCard from '../components/ProfileCard'
+import GetQrcode from '../components/GetQrcode'
 import GetJoinCode from '../components/GetJoinCode'
 import './Profilepage.css'
 
 function Profilepage() {
-  const [profileBackground, setProfileBackground] = useState(null);
-  const [profileImage, setProfileImage] = useState(null);
+  const [ profileBackground, setProfileBackground ] = useState(null);
+  const [ profileImage, setProfileImage ] = useState(null);
 
   const handleBackgroundUpload = (event) => {
     const selectedBackground = event.target.files[0];
@@ -46,16 +48,15 @@ function Profilepage() {
         </section>
 
         <section className="profile-resident">
-          <div className="profile-resident-card">
-            <h1>디지털 주민등록증</h1>
-            <div></div>
+          <h1 className="profile-resident-title">
+            NFT 구매내역
+          </h1>
+          <div className="profile-resident-container">
+            <ProfileCard />
+            <GetQrcode />
           </div>
-          <div className="profile-resident-info">
-            <form action='submit'>
-              <p>이름</p>
-            </form>
-            <GetJoinCode />
-          </div>
+          <GetJoinCode />
+          
           {/* 다른 프로필 정보도 필요에 따라 추가 */}
         </section>
         

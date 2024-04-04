@@ -27,7 +27,7 @@ const mainnet = {
 const metadata = {
   name: 'Danyang DAO',
   description: 'Danyang DAO description',
-  url: '', // origin must match your domain & subdomain
+  url: 'https://danyang.on-fleek.app/', // origin must match your domain & subdomain
   icons: []
 }
 

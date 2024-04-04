@@ -21,7 +21,6 @@ function Header() {
           <Link to="/marketplace"><li>다민되기</li></Link>
           <Link to="https://open.kakao.com/o/gSjl1meg"><li>참여하기</li></Link>
         </ul>
-        {/* <Link to='/profile'><img src={profileLogo} alt="profile logo" /></Link> */}
       </nav>
       <div className="header-profile">
         <w3m-button />

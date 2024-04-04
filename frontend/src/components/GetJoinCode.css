@@ -1,4 +1,7 @@
-.code-container {
-  text-align: end;
-  column-gap: 0.5rem;
+.joincode-container {
+  margin-top: 2rem;
+}
+
+#joincode {
+  margin-left: 1rem;
 }

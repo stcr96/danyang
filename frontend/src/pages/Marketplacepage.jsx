@@ -1,6 +1,9 @@
 import BuyNFT from '../components/BuyNFT'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
+import dodamsambong from '../assets/dodam-sambong.jpg'
+import gudambong from '../assets/gudambong.jpg'
+import sainam from '../assets/sainam.png'
 import './Marketplacepage.css';
 
 function Marketplacepage() {
@@ -40,7 +43,7 @@ function Marketplacepage() {
               </div>
             </div>
           </div>
-          <img src="https://ipfs.io/ipfs/QmeExEYoftvbYQvQWhCMdVgua1MARtyQbDUVVP99sUG8dC?filename=%EC%9D%B4%EB%B0%A9%EC%9A%B4_%EB%8F%84%EB%8B%B4%EC%82%BC%EB%B4%89.jpg" alt="도담삼봉nft" className="nft-img" />
+          <img src={dodamsambong} alt="도담삼봉nft" className="nft-img" />
         </div>
 
         <hr />
@@ -68,7 +71,7 @@ function Marketplacepage() {
               </div>
             </div>
           </div>
-          <img src="https://ipfs.io/ipfs/QmVbs2x4kemWiHc4k29jjbrMp7JgFszpM951givZ139JSh?filename=%EA%B5%AC%EB%8B%B4%EB%8F%84_%EC%9D%B4%EB%B0%A9%EC%9A%B4.jpg" alt="구담봉nft" className="nft-img" />
+          <img src={gudambong} alt="구담봉nft" className="nft-img" />
         </div>
 
         <hr />
@@ -96,7 +99,7 @@ function Marketplacepage() {
               </div>
             </div>
           </div>
-          <img src="https://ipfs.io/ipfs/QmSJ3rrxnExFMw1G4fh4iXihtT5GFPPpLfcTsotKvPkUNz?filename=%EC%82%AC%EC%9D%B8%EC%95%94%EB%8F%84-%EA%B9%80%ED%99%8D%EB%8F%84.jpg" alt="사인암nft" className="nft-img" />
+          <img src={sainam} alt="사인암nft" className="nft-img" />
         </div>
       </main>
       <Footer />
