@@ -14,6 +14,16 @@ contract Danyang is ERC721, EIP712, ERC721Votes, ReentrancyGuard, Ownable {
     string private baseURI;
     string private _joinCode;
 
+    struct Credential {
+        uint256 id;
+        string img;
+        address issuer;
+        address holder;
+        uint256 timestamp;
+    }
+
+    mapping (address => Credential) private credentials;
+
     constructor(address initialOwner, string memory initialBaseURI, string memory initialJoinCode)
         ERC721("Danyang", "ESDY")
         EIP712("Danyang", "1")
@@ -21,13 +31,25 @@ contract Danyang is ERC721, EIP712, ERC721Votes, ReentrancyGuard, Ownable {
     { 
         baseURI = initialBaseURI;
         _joinCode = initialJoinCode;
+        _nextTokenId = 1;
     }
 
     function _baseURI() internal view virtual override returns (string memory) {
         return baseURI;
     }
 
-    // 다음 함수들은 사용자와 상호작용하는 함수들입니다.
+    function _claimCredential(address _holderAddress, uint256 _tokenId) internal {
+        require(balanceOf(_holderAddress)==1, "Danyang: Not a Damin");
+        require(credentials[_holderAddress].id==0, "Danyang: Already issued resident");
+        Credential storage credential = credentials[_holderAddress];
+        credential.id = _tokenId;
+        credential.img = baseURI;
+        credential.issuer = owner();
+        credential.holder = _holderAddress;
+        credential.timestamp = block.timestamp;
+    }
+
+    // 다음 함수들은 사용자와 상호작용하는 함수들입니다.    
 
     function buy() public payable {
         require(saleStatus, "Danyang: Not on sale now");
@@ -36,16 +58,17 @@ contract Danyang is ERC721, EIP712, ERC721Votes, ReentrancyGuard, Ownable {
         uint256 tokenId =_nextTokenId++;
 
         _safeMint(_msgSender(), tokenId);
-    }
-
-    function isDamin() public view returns (bool) {
-        if (balanceOf(msg.sender)==1) return true;
-        else return false;
+        _claimCredential(_msgSender(), tokenId);
     }
 
     function getJoinCode() public view returns (string memory) {
         require(balanceOf(msg.sender)==1, "Danyang: Not a Damin");
         return _joinCode;
+    }
+    
+    function getCredential() public view returns (Credential memory) {
+        require(credentials[msg.sender].id != 0, "Danyang: Buy NFT First");
+        return credentials[msg.sender];
     }
     
     // 다음 함수들은 owner만 사용할 수 있습니다.
@@ -54,12 +77,12 @@ contract Danyang is ERC721, EIP712, ERC721Votes, ReentrancyGuard, Ownable {
         baseURI = baseURI_;
     }
     
-    function updateJoinCode(string calldata joinCode_) external onlyOwner {
-        _joinCode = joinCode_;
-    }
-    
     function updateSaleStatus(bool _saleStatus) external onlyOwner {
         saleStatus = _saleStatus;
+    }
+    
+    function updateJoinCode(string calldata joinCode_) external onlyOwner {
+        _joinCode = joinCode_;
     }
 
     function withdraw() public payable onlyOwner nonReentrant {

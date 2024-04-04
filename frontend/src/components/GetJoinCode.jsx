@@ -24,10 +24,11 @@ function GetJoinCode() {
 
   return (
     <>
-      <div className="code-container">
+      <div className="joincode-container">
         <button type='button' className='primary' onClick={getJoinCode}>카카오톡 단체방 코드 받기</button>
-        <p>{joinCode}</p>
+        <span id='joincode'>{joinCode}</span>
       </div>
+      <p className='warning'><small>※ 경고: 이 코드를 노출하지 마세요. NFT를 구매하지 않은 사람이 참여코드로 단양 커뮤니티에 들어오게 될 수 있습니다.</small></p>
     </>
   )
 }

@@ -65,17 +65,18 @@
 }
 
 .profile-resident {
-  display: flex;
-  justify-content: space-between;
   margin-top: 32rem;
   width: 1080px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.profile-resident-card {
-  width: 500px;
-  height: 280px;
-  border: 1px solid gray;
-  border-radius: 2rem;
+.profile-resident-title {
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.profile-resident-container {
+  display: flex;
+  justify-content: space-between;
 }
