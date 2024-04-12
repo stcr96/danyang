@@ -16,14 +16,14 @@ module.exports = {
   },
   defaultNetwork: 'Mumbai',
   networks: {
-    Mumbai: {
+    // Mumbai: {
+    //   url: `${API_URL}`,
+    //   accounts: [`0x${PRIVATE_KEY}`]
+    // },
+    Fuji: {
       url: `${API_URL}`,
       accounts: [`0x${PRIVATE_KEY}`]
     },
-    // Fuji: {
-    //   url: "https://avalanche-fuji.infura.io/v3/f8a865fe5daa45d29b538c8cc0d4ebe4",
-    //   accounts: [""]
-    // },
   },
   paths: {
     artifacts: '../frontend/src'
