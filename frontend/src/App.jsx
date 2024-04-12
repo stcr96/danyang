@@ -16,11 +16,11 @@ const projectId = '9ee04e5a11ffadb507e3e5d0b6ae19af'
 
 // 2. Set chains
 const mainnet = {
-  chainId: 80001,
-  name: 'Mumbai',
-  currency: 'MATIC',
-  explorerUrl: 'https://mumbai.polygonscan.com/',
-  rpcUrl: 'https://polygon-mumbai.g.alchemy.com/v2/Q4TLtST-SqQc-Il8qolLi5XQ90figtVd'
+  chainId: 43113,
+  name: 'Fuji',
+  currency: 'AVAX',
+  explorerUrl: 'https://subnets-test.avax.network/',
+  rpcUrl: '​https://api.avax-test.network/ext/bc/C/rpc'
 }
 
 // 3. Create a metadata object
