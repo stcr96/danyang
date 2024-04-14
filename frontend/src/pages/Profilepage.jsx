@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
 import ProfileCard from '../components/ProfileCard'
-import GetQrcode from '../components/GetQrcode'
 import GetJoinCode from '../components/GetJoinCode'
 import './Profilepage.css'
 
@@ -49,13 +48,12 @@ function Profilepage() {
 
         <section className="profile-resident">
           <h1 className="profile-resident-title">
-            NFT 구매내역
+            나의 디지털 주민증
           </h1>
           <div className="profile-resident-container">
             <ProfileCard />
-            <GetQrcode />
+            <GetJoinCode />
           </div>
-          <GetJoinCode />
           
           {/* 다른 프로필 정보도 필요에 따라 추가 */}
         </section>

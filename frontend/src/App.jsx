@@ -1,7 +1,8 @@
 import { createWeb3Modal, defaultConfig } from '@web3modal/ethers/react'
-import Header from './components/Header';
+import Header from './components/Header'
 import Footer from './components/Footer'
-import { Link } from 'react-router-dom';
+import GetQrcode from './components/GetQrcode'
+import { Link } from 'react-router-dom'
 import danyangLandscape from './assets/danyang-landscape.jpg'
 import learnmoreLogo from './assets/learnmore.svg'
 import credential from './assets/credential.png'
@@ -17,10 +18,10 @@ const projectId = '9ee04e5a11ffadb507e3e5d0b6ae19af'
 // 2. Set chains
 const mainnet = {
   chainId: 43113,
-  name: 'Fuji',
+  name: 'AVAX_Fuji',
   currency: 'AVAX',
   explorerUrl: 'https://subnets-test.avax.network/',
-  rpcUrl: '​https://api.avax-test.network/ext/bc/C/rpc'
+  rpcUrl: 'https://api.avax-test.network/ext/bc/C/rpc'
 }
 
 // 3. Create a metadata object
@@ -144,7 +145,7 @@ function App() {
             <div className="e-content">
               <p>Ready to leap into the future while preserving the past? You’re just a click away. Time to set Danyang’s destiny.</p>
             </div>
-            <button className="primary"><Link to='/about'>Getting Started</Link></button>
+            <GetQrcode />
           </section>
           
         </div>
