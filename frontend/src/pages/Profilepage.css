@@ -72,11 +72,15 @@
 }
 
 .profile-resident-title {
-  margin-bottom: 2rem;
   font-size: 2rem;
+  margin-bottom: 3rem;
 }
 
 .profile-resident-container {
   display: flex;
   justify-content: space-between;
+}
+
+.profilepage-title {
+  margin-bottom: 2rem;
 }

@@ -37,7 +37,7 @@ function Marketplacepage() {
               </p>
               <div className="flex-sale">
                 <span className="sale-price">
-                  0.03 <span className="unit">ETH</span>
+                  0.01 <span className="unit">ETH</span>
                 </span>
                 <BuyNFT />
               </div>
@@ -65,7 +65,7 @@ function Marketplacepage() {
               </p>
               <div className="flex-sale">
                 <span className="sale-price">
-                  0.03 <span className="unit">ETH</span>
+                  0.01 <span className="unit">ETH</span>
                 </span>
                 <BuyNFT />
               </div>
@@ -93,7 +93,7 @@ function Marketplacepage() {
               </p>
               <div className="flex-sale">
                 <span className="sale-price">
-                  0.03 <span className="unit">ETH</span>
+                  0.01 <span className="unit">ETH</span>
                 </span>
                 <BuyNFT />
               </div>
