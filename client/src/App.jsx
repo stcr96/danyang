@@ -17,11 +17,11 @@ const projectId = '9ee04e5a11ffadb507e3e5d0b6ae19af'
 
 // 2. Set chains
 const mainnet = {
-  chainId: 43113,
-  name: 'AVAX_Fuji',
-  currency: 'AVAX',
-  explorerUrl: 'https://subnets-test.avax.network/',
-  rpcUrl: 'https://api.avax-test.network/ext/bc/C/rpc'
+  chainId: 1001,
+  name: 'Kaia_Kairos',
+  currency: 'KAIA',
+  explorerUrl: 'https://kairos.kaiascan.io/', 
+  rpcUrl: 'https://public-en.kairos.node.kaia.io'
 }
 
 // 3. Create a metadata object
