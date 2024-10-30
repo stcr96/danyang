@@ -1,10 +1,17 @@
-use server::configuration::get_configuration;
-use std::net::TcpListener;
+use actix_web::{get, web, App, HttpRequest, HttpResponse, HttpServer, Responder};
 
-#[tokio::main]
+#[actix_web::main]
 async fn main() -> std::io::Result<()> {
-    let configuration = get_configuration().expect("Failed to read configuration.");
-    let address = format!("127.0.0.1:{}", configuration.application_port);
-    let listener = TcpListener::bind(address)?;
-    run(listener)?.await
+    HttpServer::new(|| {
+        App::new()
+            .service(health_check)
+    })
+    .bind("127.0.0.1:8080")?
+    .run()
+    .await
+}
+
+#[get("/health")]
+async fn health_check() -> impl Responder {
+    HttpResponse::Ok()
 }
